@@ -1,0 +1,17 @@
+1st Attempt:
+
+PS D:\blockchain\source_code\crypto_eth> truffle console
+truffle(development)> DappToken.deployed().then(function(i) {token=i;})
+undefined
+truffle(development)>token.address
+'0xC4b7B130df8B43e57B478814B3eBd58d6b996d6B'
+truffle(development)> token.totalSupply().then(function(s){totalSupply=s;})
+undefined
+truffle(development)> totalSupply
+<BN: f4240>
+truffle(development)> totalSupply.toNumber()
+1000000
+truffle(development)> .exit
+
+################################################################
+
