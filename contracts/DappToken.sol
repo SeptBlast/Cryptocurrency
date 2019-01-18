@@ -16,7 +16,7 @@ contract DappToken{
         address indexed _from,
         address indexed _to,
         uint256 _value
-    );
+    ); 
 
     // approve
     event Approval(
@@ -68,8 +68,12 @@ contract DappToken{
         // require allowance is big to transfer
         require(_value <= allowance[_from][msg.sender]);
         // change the balance
-        // update the allowance 
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+        // update the allowanc
+        allowance[_from][msg.sender] -= _value;
         // call transfer event
+        emit Transfer(_from, _to, _value);
         // retrun boolian
         return true;
     }
